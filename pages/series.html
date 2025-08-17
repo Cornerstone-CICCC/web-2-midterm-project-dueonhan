@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script type="module" src="../src/tv-series.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <title>TV</title>
+  </head>
+
+  <body class="dark-mode">
+    <header class="header_section">
+      <a href="./movies.html"><i class="fa-solid fa-tv"></i></a>
+
+      <div class="search-section">
+        <search>
+          <form action="./movies.html" method="get">
+            <label for="site-search"></label>
+            <input
+              type="search"
+              id="site-search"
+              name="q"
+              placeholder="Search here"
+            />
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </search>
+      </div>
+
+      <div class="modes">
+        <span class="round">
+          <span class="round-circle"></span>
+        </span>
+      </div>
+    </header>
+
+    <div class="container">
+      <aside class="left-sidebar">
+        <nav class="menu">
+          <ul>
+            <li class="home" id="home">
+              <a href="/"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li class="movies" id="movies">
+              <a href="./movies.html"
+                ><i class="fa-solid fa-clapperboard"></i> Movies</a
+              >
+            </li>
+            <li class="series" id="series">
+              <a href="./series.html"><i class="fa-solid fa-tv"></i> Series</a>
+            </li>
+            <li class="about" id="about">
+              <a href="./about.html"
+                ><i class="fa-solid fa-circle-info"></i> About</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="main-content tv-series" id="tv-series">
+        <div class="banner-section">
+          <div class="main-banner">
+            <div class="slider-wrapper"></div>
+          </div>
+        </div>
+
+        <div class="result">
+          <h2>Search Result</h2>
+          <div class="cards-wrapper"></div>
+        </div>
+
+        <div class="airing-today">
+          <h2>Airing Today</h2>
+          <div class="cards-wrapper"></div>
+        </div>
+
+        <div class="popular-series">
+          <h2>Popular TV Shows</h2>
+          <div class="cards-wrapper"></div>
+        </div>
+
+        <div class="top-rated-series">
+          <h2>Top Rated Series</h2>
+          <div class="cards-wrapper"></div>
+        </div>
+
+        <div class="on-the-air">
+          <h2>On The Air</h2>
+          <div class="cards-wrapper"></div>
+        </div>
+      </main>
+
+      <div class="modal"></div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2025 Movie Explorer. All rights reserved.</p>
+      <ul class="footer_lists">
+        <li><a href="https://www.themoviedb.org/about">About TMDB</a></li>
+        <li>
+          <a href="https://www.themoviedb.org/privacy-policy"
+            >Privacy Policy
+          </a>
+        </li>
+        <li><a href="https://github.com/dueonhan">Github</a></li>
+        <li><a href="https://www.themoviedb.org/">Powered by TMDB</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

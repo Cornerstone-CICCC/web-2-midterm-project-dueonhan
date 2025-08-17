@@ -1,0 +1,27 @@
+body.dark-mode {
+  --bg-color: #14181f;
+  --font-color: #ffffff;
+}
+
+body.light-mode {
+  --bg-color: #ffffff;
+  --font-color: #5d584b;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--font-color);
+}
+
+.header {
+  background-color: var(--bg-secondary);
+}
+
+.button-primary {
+  background-color: var(--second-col);
+  color: var(--font-color);
+}
+
+.button-primary:hover {
+  background-color: var(--second-color-lighter);
+}

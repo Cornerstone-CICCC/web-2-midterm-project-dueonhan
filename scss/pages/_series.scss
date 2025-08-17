@@ -1,0 +1,74 @@
+@use "../abstracts/variables" as *;
+
+.airing-today {
+  width: 100%;
+  min-height: 300px;
+  margin: 20px;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE 10+ */
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari
+  }
+
+  h2 {
+    font-size: 30px;
+    color: var(--font-color);
+  }
+  // card section
+}
+
+.popular-series {
+  width: 100%;
+  min-height: 300px;
+  margin: 20px;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE 10+ */
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari
+  }
+
+  h2 {
+    font-size: 30px;
+    color: var(--font-color);
+  }
+  // card section
+}
+
+.top-rated-series {
+  width: 100%;
+  min-height: 300px;
+  margin: 20px;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE 10+ */
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari
+  }
+
+  h2 {
+    font-size: 30px;
+    color: var(--font-color);
+  }
+  // card section
+}
+
+.on-the-air {
+  width: 100%;
+  min-height: 300px;
+  margin: 20px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari
+  }
+
+  h2 {
+    font-size: 30px;
+    color: var(--font-color);
+  }
+  // card section
+}

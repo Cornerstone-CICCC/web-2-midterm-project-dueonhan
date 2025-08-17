@@ -1,0 +1,19 @@
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:hover {
+    background: #0056b3;
+  }
+}
