@@ -103,10 +103,12 @@ $(document).ready(function () {
 
 getPopularMovies()
   .then((data) => {
+    console.log("data", data);
     homeMoviesList(data);
     mainMoviesbannerList(data);
     trendingMovieList(data);
     initSlider();
+    aoubtMoviesList(data);
   })
   .catch((error) => {
     console.error("Error fetching movies:", error);
@@ -387,4 +389,42 @@ function searchingMovieList(arr) {
   });
   $(".result").show();
   $(".result .cards-wrapper").html(imgHtml);
+}
+
+// about
+//
+function aoubtMoviesList(arr) {
+  let imgHtml = "";
+
+  arr.results.forEach((el, index) => {
+    const num = index + 1;
+    let slideClass = "";
+
+    if (num >= 1 && num <= 5) {
+      slideClass = "slide-right";
+    } else if (num >= 6 && num <= 10) {
+      slideClass = "slide-left";
+    } else if (num >= 11 && num <= 15) {
+      slideClass = "slide-right";
+    } else if (num >= 16 && num <= 20) {
+      slideClass = "slide-left";
+    }
+
+    // 5개 단위로 끊어서 하나의 row 안에 넣기
+    if (num % 5 === 1) {
+      imgHtml += `<div class="img-row ${slideClass}">`;
+    }
+
+    imgHtml += `
+      <div class="imgs">
+        <img src="https://image.tmdb.org/t/p/w185/${el.backdrop_path}" alt="" />
+      </div>
+    `;
+
+    if (num % 5 === 0) {
+      imgHtml += `</div>`; // row 닫기
+    }
+  });
+
+  $(".about-page .main_section .img-wrapper").append(imgHtml);
 }

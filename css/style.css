@@ -501,7 +501,7 @@ body {
   display: none;
 }
 .modal .modal-content {
-  background-color: var(--bg);
+  background-color: var(--modalbg);
   padding: 20px;
   border-radius: 10px;
   max-width: 400px;
@@ -1053,6 +1053,7 @@ body {
   --gray: #92979e;
   --black: #000000;
   --font-color: #ffffff;
+  --modalbg: #14181f;
 }
 
 :root {
@@ -1062,6 +1063,7 @@ body {
   --second-color-lighter: #e5e05a;
   --gray: #aea89b;
   --font-color: #5d584b;
+  --modalbg: #aea89b;
 }
 
 /*# sourceMappingURL=style.css.map */
