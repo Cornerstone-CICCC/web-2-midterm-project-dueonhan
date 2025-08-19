@@ -89,7 +89,6 @@ $(document).ready(function () {
     e.preventDefault();
 
     const keyword = $("#site-search").val();
-    console.log("검색 키워드:", keyword);
 
     if (keyword) {
       getKeywordsSeries(keyword)
@@ -151,7 +150,7 @@ getGenreTVInformation()
 //series info and modal
 $(document).on("click", ".card", function () {
   const seriesId = $(this).data("id");
-  console.log("series ID:", seriesId);
+
   series;
   Promise.all([getSearchSeriesInfo(seriesId), getYoutubeSeries(seriesId)])
     .then(([seriesData, videoData]) => {
@@ -186,10 +185,18 @@ function mainSeriesBannerList(arr) {
 
   arr.results.forEach((el, index) => {
     imgHtml += `
-    <img src="https://image.tmdb.org/t/p/w500/${el.backdrop_path}" alt="" />
+    <img
+      src="${
+        el.backdrop_path
+          ? `https://image.tmdb.org/t/p/w185/${el.backdrop_path}`
+          : "../images/noimageavailable.png"
+      }"
+    />
     <h2>${el.name}</h2>
     
-    <button class="watch-btn" data-id="${el.id}" data-index="${index}">Watch More</button>
+    <button class="watch-btn" data-id="${
+      el.id
+    }" data-index="${index}">Watch More</button>
     `;
   });
 
@@ -203,8 +210,11 @@ function trendingSeriesList(arr) {
     imgHtml += `
       <div class="card" data-id="${el.id}">
               <img
-                src="https://image.tmdb.org/t/p/w185//${el.backdrop_path}"
-                alt=""
+                src="${
+                  el.backdrop_path
+                    ? `https://image.tmdb.org/t/p/w185/${el.backdrop_path}`
+                    : "../images/noimageavailable.png"
+                }"
               />
               <div class="title">${el.name.substring(0, 20)}</div>
               <div class="content">
@@ -238,9 +248,12 @@ function displaySeriesModal(post) {
       <div class="modal-content">
           <div class="modal-img">
             <img
-              src="https://image.tmdb.org/t/p/w500/${post.poster_path}"
-              alt="Movie Poster"
-            />
+                src="${
+                  post.backdrop_path
+                    ? `https://image.tmdb.org/t/p/w500/${post.backdrop_path}`
+                    : "../images/noimageavailable.png"
+                }"
+              />
           </div>
           <span class="close-btn">&times;</span>
           <h2 class="title">${post.name}</h2>
@@ -289,8 +302,11 @@ function nowPlayingSeriesList(arr) {
     imgHtml += `
       <div class="card" data-id="${el.id}">
               <img
-                src="https://image.tmdb.org/t/p/w185//${el.backdrop_path}"
-                alt=""
+                src="${
+                  el.backdrop_path
+                    ? `https://image.tmdb.org/t/p/w185/${el.backdrop_path}`
+                    : "../images/noimageavailable.png"
+                }"
               />
               <div class="title">${el.name.substring(0, 20)}</div>
               <div class="content">
@@ -310,8 +326,11 @@ function TopRatedSeriesList(arr) {
     imgHtml += `
       <div class="card" data-id="${el.id}">
               <img
-                src="https://image.tmdb.org/t/p/w185//${el.backdrop_path}"
-                alt=""
+                src="${
+                  el.backdrop_path
+                    ? `https://image.tmdb.org/t/p/w185/${el.backdrop_path}`
+                    : "../images/noimageavailable.png"
+                }"
               />
               <div class="title">${el.name.substring(0, 20)}</div>
               <div class="content">
@@ -331,8 +350,11 @@ function UpcomingReleasesSeriesList(arr) {
     imgHtml += `
       <div class="card" data-id="${el.id}">
               <img
-                src="https://image.tmdb.org/t/p/w185//${el.backdrop_path}"
-                alt=""
+                src="${
+                  el.backdrop_path
+                    ? `https://image.tmdb.org/t/p/w185/${el.backdrop_path}`
+                    : "../images/noimageavailable.png"
+                }"
               />
               <div class="title">${el.name.substring(0, 20)}</div>
               <div class="content">
@@ -363,8 +385,11 @@ function searchingMovieList(arr) {
     imgHtml += `
       <div class="card" data-id="${el.id}">
               <img
-                src="https://image.tmdb.org/t/p/w185//${el.backdrop_path}"
-                alt=""
+                src="${
+                  el.backdrop_path
+                    ? `https://image.tmdb.org/t/p/w185/${el.backdrop_path}`
+                    : "../images/noimageavailable.png"
+                }"
               />
               <div class="title">${el.name.substring(0, 20)}</div>
               <div class="content">

@@ -183,7 +183,15 @@ function homeMoviesList(arr) {
   let imgHtml = "";
 
   arr.results.forEach((el) => {
-    imgHtml += `<div class="photo"><img src="https://image.tmdb.org/t/p/w185/${el.backdrop_path}" alt="" /></div>`;
+    imgHtml += `<div class="photo">
+    <img
+                src="${
+                  el.backdrop_path
+                    ? `https://image.tmdb.org/t/p/w185/${el.backdrop_path}`
+                    : "../images/noimageavailable.png"
+                }"
+              />
+    </div>`;
   });
   $(".photos-wrapper").append(imgHtml);
 }
@@ -193,10 +201,18 @@ function mainMoviesbannerList(arr) {
 
   arr.results.forEach((el, index) => {
     imgHtml += `
-    <img src="https://image.tmdb.org/t/p/w500/${el.backdrop_path}" alt="" />
+    <img
+      src="${
+        el.backdrop_path
+          ? `https://image.tmdb.org/t/p/w500/${el.backdrop_path}`
+          : "../images/noimageavailable.png"
+      }"
+    />
     <h2>${el.title}</h2>
     
-    <button class="watch-btn" data-id="${el.id}" data-index="${index}">Watch More</button>
+    <button class="watch-btn" data-id="${
+      el.id
+    }" data-index="${index}">Watch More</button>
     `;
   });
 
@@ -210,8 +226,11 @@ function trendingMovieList(arr) {
     imgHtml += `
       <div class="card" data-id="${el.id}">
               <img
-                src="https://image.tmdb.org/t/p/w185//${el.backdrop_path}"
-                alt=""
+                src="${
+                  el.backdrop_path
+                    ? `https://image.tmdb.org/t/p/w185/${el.backdrop_path}`
+                    : "../images/noimageavailable.png"
+                }"
               />
               <div class="title">${el.title.substring(0, 20)}</div>
               <div class="content">
@@ -299,8 +318,11 @@ function nowPlayingMovieList(arr) {
     imgHtml += `
       <div class="card" data-id="${el.id}">
               <img
-                src="https://image.tmdb.org/t/p/w185//${el.backdrop_path}"
-                alt=""
+                src="${
+                  el.backdrop_path
+                    ? `https://image.tmdb.org/t/p/w185/${el.backdrop_path}`
+                    : "../images/noimageavailable.png"
+                }"
               />
               <div class="title">${el.title.substring(0, 20)}</div>
               <div class="content">
@@ -320,8 +342,11 @@ function TopRatedMovieList(arr) {
     imgHtml += `
       <div class="card" data-id="${el.id}">
               <img
-                src="https://image.tmdb.org/t/p/w185//${el.backdrop_path}"
-                alt=""
+                src="${
+                  el.backdrop_path
+                    ? `https://image.tmdb.org/t/p/w185/${el.backdrop_path}`
+                    : "../images/noimageavailable.png"
+                }"
               />
               <div class="title">${el.title.substring(0, 20)}</div>
               <div class="content">
@@ -341,8 +366,11 @@ function UpcomingReleasesMovieList(arr) {
     imgHtml += `
       <div class="card" data-id="${el.id}">
               <img
-                src="https://image.tmdb.org/t/p/w185//${el.backdrop_path}"
-                alt=""
+                src="${
+                  el.backdrop_path
+                    ? `https://image.tmdb.org/t/p/w185/${el.backdrop_path}`
+                    : "../images/noimageavailable.png"
+                }"
               />
               <div class="title">${el.title.substring(0, 20)}</div>
               <div class="content">
@@ -410,19 +438,24 @@ function aoubtMoviesList(arr) {
       slideClass = "slide-left";
     }
 
-    // 5개 단위로 끊어서 하나의 row 안에 넣기
     if (num % 5 === 1) {
       imgHtml += `<div class="img-row ${slideClass}">`;
     }
 
     imgHtml += `
       <div class="imgs">
-        <img src="https://image.tmdb.org/t/p/w185/${el.backdrop_path}" alt="" />
+        <img
+            src="${
+              el.backdrop_path
+                ? `https://image.tmdb.org/t/p/w500/${el.backdrop_path}`
+                : "../images/noimageavailable.png"
+            }"
+          />
       </div>
     `;
 
     if (num % 5 === 0) {
-      imgHtml += `</div>`; // row 닫기
+      imgHtml += `</div>`;
     }
   });
 
